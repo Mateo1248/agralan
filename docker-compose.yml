@@ -1,0 +1,14 @@
+version: "3.7"
+
+
+services:   
+    agralan_postgres:
+        image: postgres:13.4
+        container_name: agralan_postgres
+        restart: always
+        environment: 
+            - POSTGRES_DB=${AGRALAN_DB_NAME}
+            - POSTGRES_USER=${AGRALAN_DB_USER}
+            - POSTGRES_PASSWORD=${AGRALAN_DB_PASSWORD}
+        ports:
+            - ${AGRALAN_DB_PORT}:5432
